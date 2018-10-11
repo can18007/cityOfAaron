@@ -14,6 +14,9 @@ public class Player {
 
     private String name;
 
+    public Public(){
+    }
+
     public void setName(String _name){
         this.name = _name;
     }
