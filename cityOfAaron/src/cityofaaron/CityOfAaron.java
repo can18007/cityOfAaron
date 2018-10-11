@@ -5,6 +5,7 @@
  * Team members: Megan Hendrickson, McKell Painter, Wladimir Canar
  */
 package cityofaaron;
+import model.*;
 
 /**
  *
