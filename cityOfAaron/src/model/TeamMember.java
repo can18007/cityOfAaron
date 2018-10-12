@@ -17,7 +17,7 @@ public enum TeamMember {
     private String name;
     private String title;
 
-    TeamMember(String_name, String_title)
+    TeamMember(String _name, String _title)
     {
         name = _name;
         title = _title;
