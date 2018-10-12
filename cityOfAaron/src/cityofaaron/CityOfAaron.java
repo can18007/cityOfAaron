@@ -18,6 +18,16 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Player playerOne = new Player();
+        playerOne.setName("Megan");
+        
+        Game game = new Game();
+        game.setPlayer(playerOne);
+
+        Player result = game.getPlayer();
+        System.out.println(result.getName());
+
+        System.out.printIn(TeamMember.MEGAN.getName() + " - " + TeamMember.MEGAN.getTitle());
     }
     
 }
