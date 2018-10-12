@@ -6,10 +6,21 @@
  */
 package model;
 
-/**
- *
- * @author mwcaq480
- */
-public class Game {
+import java.io.Serializable;
+
+public class Game implements Serializable {
     
+    private Player thePlayer;
+
+    public Game() {
+    }
+
+    public void setPlayer(Player _thePlayer){
+        this.thePlayer = _thePlayer;
+    }
+    
+    public Player getPlayer(){
+        return this.thePlayer;
+    }
+
 }

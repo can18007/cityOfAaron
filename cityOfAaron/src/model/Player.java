@@ -6,10 +6,21 @@
  */
 package model;
 
-/**
- *
- * @author mwcaq480
- */
-public class Player {
+import java.io.Serializable;
+
+public class Player implements Serializable {
+
+    private String name;
+
+    public Player(){
+    }
+
+    public void setName(String _name){
+        this.name = _name;
+    }
+
+    public String getName(){
+        return this.name;
+    }
     
 }
