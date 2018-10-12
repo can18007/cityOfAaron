@@ -27,7 +27,7 @@ public class CityOfAaron {
         Player result = game.getPlayer();
         System.out.println(result.getName());
 
-        System.out.printIn(TeamMember.MEGAN.getName() + " - " + TeamMember.MEGAN.getTitle());
+        System.out.println(TeamMember.MEGAN.getName() + " - " + TeamMember.MEGAN.getTitle());
     }
     
 }
