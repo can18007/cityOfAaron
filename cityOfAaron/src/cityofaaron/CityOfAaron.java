@@ -28,6 +28,16 @@ public class CityOfAaron {
         System.out.println(result.getName());
 
         System.out.println(TeamMember.MEGAN.getName() + " - " + TeamMember.MEGAN.getTitle());
+        
+        //Test Location class author wladimir
+        Location myLocation = new Location();
+        myLocation.setDescription("Test Location");
+        myLocation.setSymbol("example symbol");
+        
+        System.out.println(myLocation.getDescription());
+        System.out.println(myLocation.getSymbol());
+        //end test
+
     }
     
 }
