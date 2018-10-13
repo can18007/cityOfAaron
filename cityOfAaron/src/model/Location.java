@@ -17,15 +17,15 @@ public class Location implements Serializable {
     }
     
     public String getDescription() {
-        return description;
+        return this.description;
     }
     
     public void setDescription(String _description){
-        description = _description;
+        this.description = _description;
     }
 
     public String getSymbol(){
-        return symbol;
+        return this.symbol;
     }
     
     public void setSymbol(String _symbol){
