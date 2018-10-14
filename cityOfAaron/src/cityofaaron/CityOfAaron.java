@@ -37,7 +37,16 @@ public class CityOfAaron {
         System.out.println(myLocation.getDescription());
         System.out.println(myLocation.getSymbol());
         //end test
-
+        
+        //Test ListItem class author mpainter
+        ListItem aListItem = new ListItem();
+        aListItem.setName("Item1");
+        aListItem.setNumber(1);
+        
+        System.out.println(aListItem.getName());
+        System.out.println(aListItem.getNumber());
+        //end test
+        
     }
     
 }
