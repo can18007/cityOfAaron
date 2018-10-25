@@ -47,6 +47,14 @@ public class CityOfAaron {
         System.out.println(aListItem.getNumber());
         //end test
         
+
+        //Test CropData class author Megan Hendrickson
+        CropData myCropData = new CropData();
+        myCropData.setYear(2010);
+        myCropData.setPopulation(27);
+
+        System.out.println(myCropData.getYear());
+        System.out.println(myCropData.getPopulation());
     }
     
 }
