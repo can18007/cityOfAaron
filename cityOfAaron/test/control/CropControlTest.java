@@ -16,11 +16,20 @@ public class CropControlTest {
     
     public CropControlTest() {
     }
-
+    /** 
+     * Test of the sellLand method, of class CropData Control
+     * Test Case 1
+     */
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testSellLand() 
+    {
+        System.out.println("sellLand - Test Case 1");
+        CropData theCrops = null;
+        int toSell = 10;
+        int landCost = 20;
+        int expResult = 2790;
+        int result = CropDataControl.sellLand(theCrops, toSell, landCost);
+        assertEquals(expResult, result); 
     }
     
 }
