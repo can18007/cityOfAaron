@@ -22,12 +22,13 @@ public class CropControlTest {
      * Test of calcLandCost method, of class CropControl.
      */
     @Test
-    public void testCalcLandCost() {
+   public void testCalcLandCost() {
         System.out.println("calcLandCost");
-        int expResult = 0;
+        int expResult = 20;
         int result = CropControl.calcLandCost();
-        assertEquals(expResult, result);;
-    }
+        System.out.println(result);
+        assertEquals(expResult, result);
+   }
 
     /**
      * Test of sellLand method, of class CropControl.
@@ -35,26 +36,13 @@ public class CropControlTest {
     @Test
     public void testSellLand() {
         System.out.println("sellLand");
-        int landPrice = 0;
-        int acresToSell = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.sellLand(landPrice, acresToSell, cropData);
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of buyLand method, of class CropControl.
-     */
-    @Test
-    public void testBuyLand() {
-        System.out.println("buyLand");
-        int landPrice = 0;
-        int acresToBuy = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
-        assertEquals(expResult, result);
+        int landPrice = 20;
+        int acresToSell = 10;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(2800);
+        int expResult = 2790;
+        int result = CropControl.sellLand(landPrice,acresToSell, cropData);
+        assertEquals(expResult, result);     
     }
     
      /**
