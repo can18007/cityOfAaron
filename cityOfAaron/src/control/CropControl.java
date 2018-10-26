@@ -37,6 +37,7 @@ public class CropControl
      * Pre-conditions: acres to sell must be positive
      * and<= acresOwned
     */
+    
     public static int sellLand(int landPrice, int acresToSell, CropData cropData)
     {
         // if acresToSell < 0, return -1
@@ -60,4 +61,36 @@ public class CropControl
         // return acresOwned
         return owned;
     }
+    
+    /**
+    * The buyLand method
+    * Purpose: To buy land
+    * @param the price of land
+    * @param the number of acres to buy
+    * @param a reference to a CropData object
+    * @ return the number of acres of land now owned
+    * Pre-conditions: acres to be bought must be positive
+    * and the amount of wheat owned >= the cost to buy the land
+    */
+    
+    public static int buyLand(int landPrice, int acresToBuy, CropData cropData) 
+    { 
+        //if acresToBuy < 0, return -1
+        if(acresToBuy < 0)
+           return -1;
+        
+        //if acresToBuy * landPrice > wheatInStore, return -1
+        int wheat = cropData.getWheatInStore();
+        if (acresToBuy * landPrice > wheat)
+            return -1;
+        
+        //acresOwned = acresOwned + acresToBuy
+  
+        
+        //wheatInStore = wheatInStore – (acresToBuy * landPrice)
+        
+        //return acresOwned
+
+    }
+
 }
