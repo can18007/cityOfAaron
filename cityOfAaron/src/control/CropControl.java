@@ -59,7 +59,7 @@ public class CropControl
         // wheatInStore = wheatInStore + acresToSell * landPrice
         int wheat = cropData.getWheatInStore();
         wheat += (acresToSell*landPrice);
-        cropData.SetWheatInStore(wheat);
+        cropData.setWheatInStore(wheat);
         
         // return acresOwned
         return owned;
@@ -96,7 +96,7 @@ public class CropControl
         //wheatInStore = wheatInStore â€“ (acresToBuy * landPrice)
         int wheat = cropData.getWheatInStore();
         wheat -= (acresToBuy*landPrice);
-        cropData.SetWheatInStore(wheat);
+        cropData.setWheatInStore(wheat);
         
         // return acresOwned
         return acresOwned;
