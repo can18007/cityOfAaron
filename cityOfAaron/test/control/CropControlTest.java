@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The Crop Control Test 
+ * CIT-260
+ * Fall 2018
+ * Megan Hendrickson, Wladimir Canar, McKell Painter
  */
 package control;
 
