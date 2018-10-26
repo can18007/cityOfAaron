@@ -125,5 +125,85 @@ public class CropControlTest {
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
     }
+    
+    /**
+    * Test of buyLand method, of class CropControl.
+    */
+    @Test
+    public void testPlantCrops1() {
+        System.out.println("PlanCrops - Test1**Valid**");
+        int landPlant = 30;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(45);
+        cropData.setPopulation(5);
+        cropData.setWheatInStore(20);
+        int expResult = 30;
+        int result = CropControl.plantCrops(landPlant, cropData);
+        assertEquals(expResult, result);
+    }
+    
+     /**
+    * Test of buyLand method, of class CropControl.
+    */
+    @Test
+    public void testPlantCrops2() {
+        System.out.println("PlanCrops - Test1**Invalid**");
+        int landPlant = 0;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(45);
+        cropData.setPopulation(5);
+        cropData.setWheatInStore(20);
+        int expResult = -1;
+        int result = CropControl.plantCrops(landPlant, cropData);
+        assertEquals(expResult, result);
+    }
+    
+       /**
+    * Test of buyLand method, of class CropControl.
+    */
+    @Test
+    public void testPlantCrops3() {
+        System.out.println("PlanCrops - Test1**Invalid 2**");
+        int landPlant = 50;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(45);
+        cropData.setPopulation(5);
+        cropData.setWheatInStore(20);
+        int expResult = -1;
+        int result = CropControl.plantCrops(landPlant, cropData);
+        assertEquals(expResult, result);
+    }
+    
+        /**
+    * Test of buyLand method, of class CropControl.
+    */
+    @Test
+    public void testPlantCrops4() {
+        System.out.println("PlanCrops - Test1**Invalid 3**");
+        int landPlant = 30;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(45);
+        cropData.setPopulation(5);
+        cropData.setWheatInStore(14);
+        int expResult = -1;
+        int result = CropControl.plantCrops(landPlant, cropData);
+        assertEquals(expResult, result);
+    }
+    
+          /**
+    * Test of buyLand method, of class CropControl.
+    */
+    @Test
+    public void testPlantCrops5() {
+        System.out.println("PlanCrops - Test1**Boundary**");
+        int landPlant = 0;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(45);
+        cropData.setPopulation(2);
+        cropData.setWheatInStore(20);
+        int expResult = -1;
+        int result = CropControl.plantCrops(landPlant, cropData);
+        assertEquals(expResult, result);
+    }
 }
 
