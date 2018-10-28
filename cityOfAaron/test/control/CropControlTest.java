@@ -205,5 +205,102 @@ public class CropControlTest {
         int result = CropControl.plantCrops(landPlant, cropData);
         assertEquals(expResult, result);
     }
+
+    /**
+     * Test of buyLand method, of class CropControl.
+     */
+    @Test
+    public void testBuyLand() {
+        System.out.println("buyLand");
+        int landPrice = 0;
+        int acresToBuy = 0;
+        CropData cropData = null;
+        int expResult = 0;
+        int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of plantCrops method, of class CropControl.
+     */
+    @Test
+    public void testPlantCrops() {
+        System.out.println("plantCrops");
+        int landPlant = 0;
+        CropData cropData = null;
+        int expResult = 0;
+        int result = CropControl.plantCrops(landPlant, cropData);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOffering1() {
+        System.out.println("setOffering");
+        int harvestOffering = 5;
+        CropData cropData = null;
+        int expResult = 5;
+        int result = CropControl.setOffering(harvestOffering, cropData);
+        assertEquals(expResult, result);
+    }
+    
+     /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOffering2() {
+        System.out.println("setOffering");
+        int harvestOffering = -10;
+        CropData cropData = null;
+        int expResult = -1;
+        int result = CropControl.setOffering(harvestOffering, cropData);
+        assertEquals(expResult, result);
+    }
+    
+     /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOffering3() {
+        System.out.println("setOffering");
+        int harvestOffering = 110;
+        CropData cropData = null;
+        int expResult = -1;
+        int result = CropControl.setOffering(harvestOffering, cropData);
+        assertEquals(expResult, result);
+    }
+    
+     /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOffering4() {
+        System.out.println("setOffering");
+        int harvestOffering = 0;
+        CropData cropData = null;
+        int expResult = 0;
+        int result = CropControl.setOffering(harvestOffering, cropData);
+        assertEquals(expResult, result);
+    }
+    
+         /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOffering5() {
+        System.out.println("setOffering");
+        int harvestOffering = 100;
+        CropData cropData = null;
+        int expResult = 100;
+        int result = CropControl.setOffering(harvestOffering, cropData);
+        assertEquals(expResult, result);
+    }
+
 }
 

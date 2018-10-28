@@ -142,7 +142,33 @@ public class CropControl
             cropData.setAcresPlanted(landPlant);
             return landPlant;
         }
-    }    
+    }   
+    
+    /**
+    * The setOffering method
+    * Purpose: To set offering
+    * @param the percent of harvest to offer
+    * @param a reference to a CropData object
+    * Pre-conditions: percent of acres to offer must be between 0 and * 100
+    * and the amount of harvest must be greater than 0 
+    * author: McKell Painter
+    */
+    
+    public static int setOffering(int harvestOffering, CropData cropData)
+    { 
+    //If harvesttOffering < 0 or >100, return -1
+    if (harvestOffering < 0 || harvestOffering > 100){
+        return -1;
+    } 
+         
+    //If harvest < 0, return -1
+    int harvest = cropData.getHarvest();
+    if (harvest < 0)
+        return -1;
+    
+    return harvestOffering;
+    }
+
 }
 
 
