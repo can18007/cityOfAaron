@@ -35,12 +35,12 @@ public class CropControl
     //power point documentation
     /* The sellLand method
      * Purpose: To sell land
-    * Parameters: the price of land, the number of acres to sell, and 
-    *  a reference to a cropData object
-    * Retruns: the nubmer of acres owned after the sale
-    * Pre-conditions: acres to sell must be positive
-    * and<= acresOwned
-    */
+     * Parameters: the price of land, the number of acres to sell, and 
+     *  a reference to a cropData object
+     * Retruns: the nubmer of acres owned after the sale
+     * Pre-conditions: acres to sell must be positive
+     * and<= acresOwned
+     */
     public static int sellLand(int landPrice, int acresToSell, CropData cropData)
     {
         // if acresToSell < 0, return -1
@@ -169,6 +169,35 @@ public class CropControl
     return harvestOffering;
     }
 
+
+    /**
+     * The feedPeople method
+     * Purpose: Set Aside Wheat to Feed the People
+     * @param the number of bushels to set aside to feed the people
+     * @param the number of bushels in store
+     * @return the number of bushels in store 
+     * Pre-conditions: bushels set aside to feed people must be >= 0
+     * and bushels to set aside must be <= bushels in store
+     * author: Megan Hendrickson
+    */
+
+    public static int feedPeople(int feedPeople, CropData cropData) 
+    { 
+    // If feedPeople < 0, return -1
+        if(feedPeople < 0)
+            return -1;
+    
+    // If feedPeople > wheatInStore, return -1
+        int wheat = cropData.getWheatInStore();
+        if(feedPeople > wheat)
+            return -1;
+    
+    // wheatInStore = wheatInStore - feedPeople
+        wheat -= feedPeople;
+        cropData.setWheatInStore(wheat);
+
+    // return wheatInStore
+        return wheat;
+    }
+    
 }
-
-
