@@ -4,6 +4,7 @@
  * Spring 2018
  * Team members: Megan Hendrickson, McKell Painter, Wladimir Canar
  */
+
 package cityofaaron;
 import model.*;
 import view.*;
@@ -17,11 +18,14 @@ public class CityOfAaron {
     /**
      * @param args the command line arguments
      */
+    //variable for keeping a reference to the Game object
+    private static Game theGame = null;
+    
+    //main function - etnry point for the program
+    //runs the main menu
     public static void main(String[] args) {
         
-        //main function - etnry point for the program
-        //runs the main menu
-        MainMenuView mmv = MainMenuView();
+        MainMenuView mmv = new MainMenuView();
         mmv.displayMenuView();
         
         // TODO code application logic here

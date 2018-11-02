@@ -8,11 +8,16 @@ package model;
 
 import java.io.Serializable;
 
+
 public class Game implements Serializable {
     
     private Player thePlayer;
+    private CropData cropData; 
+    
+        
 
     public Game() {
+
     }
 
     public void setPlayer(Player _thePlayer){
@@ -22,5 +27,13 @@ public class Game implements Serializable {
     public Player getPlayer(){
         return this.thePlayer;
     }
+    
+    public void setCropData(CropData _cropData){
+        this.cropData = _cropData;
+    }
 
+    public CropData getCropData( ){
+        return this.cropData;
+    }
+    
 }
