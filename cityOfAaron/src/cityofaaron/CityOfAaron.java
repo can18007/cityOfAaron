@@ -6,6 +6,7 @@
  */
 package cityofaaron;
 import model.*;
+import view.*;
 
 /**
  *
@@ -17,6 +18,12 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        //main function - etnry point for the program
+        //runs the main menu
+        MainMenuView mmv = MainMenuView();
+        mmv.displayMenuView();
+        
         // TODO code application logic here
         Player playerOne = new Player();
         playerOne.setName("Megan");
@@ -55,6 +62,7 @@ public class CityOfAaron {
 
         System.out.println(myCropData.getYear());
         System.out.println(myCropData.getPopulation());
+        
     }
     
 }
