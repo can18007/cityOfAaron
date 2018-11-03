@@ -277,7 +277,8 @@ public class CropControlTest {
      *  Test Case 1
      */
     @Test
-    public void testFeedPeopleCase1() {
+    public void testFeedPeopleCase1() 
+    {
         System.out.println("feedPeople - Test Case 1");
         int feedPeople = 10;
         CropData cropData = new CropData();
@@ -285,8 +286,6 @@ public class CropControlTest {
         int expResult = 10;
         int result = CropControl.feedPeople(feedPeople, cropData);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
      /**
@@ -294,16 +293,15 @@ public class CropControlTest {
      *  Test Case 2
      */
     @Test
-    public void testFeedPeopleCase2() {
+    public void testFeedPeopleCase2() 
+    {
         System.out.println("feedPeople - Test Case 2");
         int feedPeople = -5;
         CropData cropData = new CropData();
         cropData.setWheatInStore(20);
-        int expResult = 20;
+        int expResult = -1;
         int result = CropControl.feedPeople(feedPeople, cropData);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
      /**
@@ -311,16 +309,15 @@ public class CropControlTest {
      *  Test Case 3
      */
     @Test
-    public void testFeedPeopleCase3() {
+    public void testFeedPeopleCase3() 
+    {
         System.out.println("feedPeople - Test Case 3");
         int feedPeople = 20;
         CropData cropData = new CropData();
         cropData.setWheatInStore(10);
-        int expResult = 10;
+        int expResult = -1;
         int result = CropControl.feedPeople(feedPeople, cropData);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
      /**
@@ -328,16 +325,15 @@ public class CropControlTest {
      *  Test Case 4
      */
     @Test
-    public void testFeedPeopleCase4() {
+    public void testFeedPeopleCase4() 
+    {
         System.out.println("feedPeople - Test Case 4");
         int feedPeople = 0;
         CropData cropData = new CropData();
         cropData.setWheatInStore(50);
         int expResult = 50;
         int result = CropControl.feedPeople(feedPeople, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);  
     }
     
      /**
@@ -345,7 +341,8 @@ public class CropControlTest {
      *  Test Case 5
      */
     @Test
-    public void testFeedPeopleCase5() {
+    public void testFeedPeopleCase5() 
+    {
         System.out.println("feedPeople - Test Case 5");
         int feedPeople = 50;
         CropData cropData = new CropData();
@@ -353,8 +350,6 @@ public class CropControlTest {
         int expResult = 0;
         int result = CropControl.feedPeople(feedPeople, cropData);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 }
 
