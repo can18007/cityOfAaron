@@ -192,6 +192,9 @@ public class CropControl
         if(feedPeople > wheat)
             return -1;
     
+// Store the amount of wheat allocated to feedPeople
+        cropData.setWheatForFood(feedPeople);
+        
     // wheatInStore = wheatInStore - feedPeople
         wheat -= feedPeople;
         cropData.setWheatInStore(wheat);
