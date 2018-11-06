@@ -8,6 +8,8 @@
 package model;
 
 import java.io.Serializable;
+import static java.lang.Math.random;
+import static java.lang.StrictMath.random;
 
 /*
  * @author Megan Hendrickson
@@ -40,7 +42,7 @@ public class CropData implements Serializable {
         this.population = _population;
     }
 
-public int getAcresOwned(){
+    public int getAcresOwned(){
         return this.acresOwned;
         }
 
@@ -103,6 +105,8 @@ public int getAcresOwned(){
     public void setAcresPlanted(int _acresPlanted) {
         this.acresPlanted = _acresPlanted;
     }
+    
+ 
  
 
 }
