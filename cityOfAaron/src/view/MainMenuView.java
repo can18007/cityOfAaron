@@ -123,9 +123,13 @@ public class MainMenuView
         //Display a welcome message
         System.out.println("Welcome " + name + " have fun!!!");
               
-        //Display the Game menu
-        //GameMenuView gmv = new GameMenuView();
-        //gmv.displayMenuView();
+       //Display the Game menu
+       //GameMenuView gmv = new GameMenuView();
+       //gmv.displayMenuView();
+       
+       //test for list menu
+       ListMenuView lmv = new ListMenuView();
+       lmv.displayMenuView();
         
     }
 
