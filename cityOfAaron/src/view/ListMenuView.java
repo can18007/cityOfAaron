@@ -90,18 +90,18 @@ public class ListMenuView {
     }
     
     public static void listAnimals() {
-        
+         System.out.println("\nDisplay List Animals elected.");
     }
     
     public static void listTools() {
-        
+         System.out.println("\nDisplay listTools selected.");
     }
     
     public static void listProvisions() {
-        
+         System.out.println("\nDisplay listProvisions selected.");
     }
     
     public static void listTeam() {
-        
+         System.out.println("\nDisplay listTeam selected.");
     }
 }
