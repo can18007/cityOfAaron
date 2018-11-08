@@ -106,8 +106,6 @@ public class CropData implements Serializable {
         this.acresPlanted = _acresPlanted;
     }
     
- 
- 
 
 }
 
