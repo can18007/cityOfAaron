@@ -27,13 +27,14 @@ public class HelpMenuView
                 "******************************\n"+
                 "*CITY OF AARON: HELP MENU *\n"+
                 "******************************\n"+
-                "1 - Goals of the Game\n"+
-                "2 - Map Help \n"+
-                "3 - Help Moving \n"+
-                "4 - Help with Lists \n"+
-                "5 - Return to Main Menu \n";
+                "1 - What are the goals of the game? \n"+
+                "2 - Where is the city of Aaron? \n"+
+                "3 - How do I view the map? \n"+
+                "4 - How do I move to another location? \n"+
+                "5 - How do I display the list of animals, provisions and tools in the city storehouse? \n"+
+                "6 - Back to the Main Menu. \n";
         
-        max = 5;
+        max = 6;
    }
 
    // The displayMenuView method
@@ -42,7 +43,7 @@ public class HelpMenuView
    // Returns: none
     public void displayMenuView()
     {
-        // execute this loop as long as the selected option is not 5
+        // execute this loop as long as the selected option is not 6
         int menuOption = 0;
         do
         {
@@ -68,7 +69,7 @@ public class HelpMenuView
     {
         // declare a variable to hold user's input
         int userInput = 0;
-        final int MAX = 5;
+        final int MAX = 6;
         //begin loop
         do
         {
@@ -76,7 +77,7 @@ public class HelpMenuView
             userInput = keyboard.nextInt();
             //if it is not a valid value, output an error message
             if(userInput < 1 || userInput > MAX)
-                System.out.println("Error: you must select 1, 2, 3, 4, or 5");
+                System.out.println("Error: you must select 1, 2, 3, 4, 5, or 6");
             //loop back to the top of the loop if input was not valid
             // end loop
         } while (userInput < 1 || userInput > MAX);
@@ -96,20 +97,25 @@ public class HelpMenuView
             viewMapHelp();
             break;
             
-            case 3: // view move help
+            
+            case 3: // view map help
+            viewMapHelp();
+            break;
+            
+            case 4: // view move help
             viewMoveHelp();
             break;
             
-            case 4: // view list help
+            case 5: // view list help
             viewListHelp();
             
-            case 5: // return to main menu
+            case 6: // return to main menu
                 return;
         }
     }
     
     // The viewGoals method
-    // Purpose: view the goals fo the game
+    // Purpose: view the goals for the game
     // Parameters: none
     // Returns: none
     public void viewGoals()
@@ -120,7 +126,7 @@ public class HelpMenuView
     
     // The viewMapHelp method
     // Purpose: help on how to view the game map
-    // Paramters: none
+    // Parameters: none
     // Returns: none
     public void viewMapHelp()
     { 
