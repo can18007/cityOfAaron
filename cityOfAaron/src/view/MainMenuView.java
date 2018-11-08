@@ -128,8 +128,8 @@ public class MainMenuView
        //gmv.displayMenuView();
        
        //test for list menu
-       ListMenuView lmv = new ListMenuView();
-       lmv.displayMenuView();
+       //ListMenuView lmv = new ListMenuView();
+       //lmv.displayMenuView();
         
     }
 
