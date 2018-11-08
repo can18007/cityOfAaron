@@ -111,7 +111,11 @@ public class GameMenuView
     
     public void viewList()
     {
-        System.out.println("\nView list option selected.");
+        //System.out.println("\nView list option selected.");
+        
+        //display list menu
+        ListMenuView lmv = new ListMenuView();
+        lmv.displayMenuView();
     }
     
     public void moveToNewLocation()
