@@ -99,7 +99,7 @@ public class CropView {
         CropControl.feedPeople(feedPeople, cropData);
         
         //Display the number of acres of wheat that have been planted and the amount of wheat left in storage.
-        System.out.format("You have set aside %d bushells of grain to feed people.", cropData.getAcresPlanted());
+        System.out.format("You have set aside %d bushells of grain to feed people.", cropData.getWheatForFood());
         System.out.format("\nYou now have %d bushels of grain left in storage", cropData.getWheatInStore());
     }
     
