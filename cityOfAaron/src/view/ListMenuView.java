@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * ListMenuView class for the City of Aaron Project
+ * CIT 260
+ * Fall 2018
+ * Team Members: McKell Painter, Wladimir Canar; Megan Hendrickson
+ * Author: Wladimir Canar
  */
 package view;
 import java.util.Scanner;
