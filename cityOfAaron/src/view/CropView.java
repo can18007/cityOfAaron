@@ -85,9 +85,12 @@ public class CropView {
         System.out.format("You now own %d acres of land", cropData.getAcresOwned());  
     }
      
+    // feedPeopleView method - Autohor: Megan Hendrickson
      public static void feedPeopleView()
     {
-       
+        // Prompt the user to enter the number of bushels of wheat to set aside
+        System.out.print("\nHow many bushels of grain do you want to set aside to feed the people?");
+        
     }
     
     public static void plantCropsView()
