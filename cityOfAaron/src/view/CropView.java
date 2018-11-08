@@ -58,6 +58,9 @@ public class CropView {
         // call the sellLandView( ) method
         sellLandView( );
         
+        // call the plantCropsVew
+        plantCropsView();
+        
         // add calls to the other crop view methods
         // as they are written
     }
