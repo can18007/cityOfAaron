@@ -12,7 +12,6 @@ import control.*;
         
 public class HelpMenuView 
 {
-    
     private String helpMenu;
     private int max;
     Scanner keyboard = new Scanner(System.in);
@@ -59,6 +58,7 @@ public class HelpMenuView
         }while (menuOption != max);  
         
     }//end of displayHelpMenu method
+    
     
     
 // The getMenuOption method
@@ -120,8 +120,9 @@ public class HelpMenuView
     // Returns: none
     public void viewGoals()
     {
-    
-    
+    System.out.println("\n As ruler of the City of Aaron, you now have responsibilities to buy and sell land, determine how much wheat to plant each year, and how much to set aside to feed your people.");
+    System.out.println("\n If you fail to provide enought wheat for the people, people will starve, some will die, and your workforce will be diminished.");
+    System.out.println("\n Plan carefully to keep your people alive, and remain in office.");
     }
     
     // The viewMapHelp method
@@ -130,7 +131,7 @@ public class HelpMenuView
     // Returns: none
     public void viewMapHelp()
     { 
-    
+        System.out.println("\n View map help option selected.");
     }
     
     //The vewMoveHelp method
@@ -139,7 +140,7 @@ public class HelpMenuView
     //Returns: none
     public void viewMoveHelp()
     {
-        
+        System.out.println("\n View move help option selected.");
     }
     
     //The viewListHelp method
@@ -148,6 +149,6 @@ public class HelpMenuView
     //Returns: none
     public void viewListHelp()
     {
-       
+       System.out.println("\n View list help option selected.");
     }
 }
