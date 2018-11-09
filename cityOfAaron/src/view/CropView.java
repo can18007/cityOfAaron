@@ -15,8 +15,6 @@ import cityofaaron.CityOfAaron;
  */
 public class CropView
 {
-    private String cropReport;
-    private int max;
     
     //Create a Scanner object
     private static Scanner keyboard = new Scanner(System.in);
@@ -126,131 +124,23 @@ public class CropView
     }
     
 
-    
-   // The CropsReportView constructor
-   // Purpse: Initialize the crop report
-   // Parameters: none
-   // Returns: none
-   public CropView()
-   {    
-       cropReport = "\n"+
-                "******************************\n"+
-                "*CITY OF AARON: CROP REPORT *\n"+
-                "******************************\n"+
-                "1 - List or view the animals in the storehouse.\n"+
-                "2 - List or view the tools in the storehouse \n"+
-                "3 - List or view the provisions in the storehouse \n"+
-                "4 - List or view the developers of this game \n"+
-                "5 - Return to Menu \n";
-        max = 5 ;
-   }
-
-    public void displayCropsReportView()
+    public static void displayCropsReportView()
     {
-        // execute this loop as long as the selected option is > 0 and <6
-        int reportOption = 0;
-        do
-        {
-            //display the help menu
-            System.out.println(cropReport);
-            
-            //get the user's selection
-            reportOption = getReportOption();
-            
-            //perform the selected action
-            doAction(reportOption);
-            
-        }while (reportOption != max);
+        //Tell the user they are viewing the crop report
+        System.out.println("\n Crop Report");
         
-    }//end of displayHelpMenu method
+        //Display the number of acres owned
+        System.out.format("You own %d acres", cropData.getAcresOwned());
+        System.out.print("Acres Owned: %d");
     
-    
-    // The getReportOption method
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: integer - the option selected
-    public int getReportOption()
-    {
-        // declare a variable to hold user's input
-        int userInput = 0;
-        final int MAX = 5;
-        //begin loop
-        do
-        {
-            // get user input from keyboard
-            userInput = keyboard.nextInt();
-            //if it is not a valid value, output an error message
-            if(userInput < 1 || userInput > MAX)
-                System.out.println("Error: you must select 1, 2, 3, 4 or 5");
-            //loop back to the top of the loop if input was not valid
-            // end loop
-        } while (userInput < 1 || userInput > MAX);
-        return userInput;
-    }
-    
-    
-    public void doAction(int option)
-    {
-        switch(option)
-        {
-            case 1: //List or view the animals in the storehouse
-            viewAnimals();
-            break;
-            
-            case 2: //List or view the tools in the storehouse
-            viewTools();
-            break;
-            
-            
-            case 3: //List or view the provisions in the storehouse
-            viewProvisions();
-            break;
-            
-            case 4: //List or view the developers of this game
-            viewDevelopers();
-            break;
-            
-            case 5: //Return to Menu
-            System.out.println("Navigate to Main Menu");
-        }
-    }
-    
-    // The viewAnimals method
-    // Purpose: view the animals in the storehouse
-    // Parameters: none
-    // Returns: none
-    public void viewAnimals()
-    {
-    
-    
-    }
-    
-    // The viewTools method
-    // Purpose: view the tools in the storehouse
-    // Parameters: none
-    // Returns: none
-    public void viewTools()
-    { 
-    
-    }
-    
-    //The viewProvisions method
-    //Purpose: view provisions in the storehouse
-    //Parameters: none
-    //Returns: none
-    public void viewProvisions()
-    {
+        //Display acres planted
+        System.out.format("You have %d acres planted", cropData.getAcresPlanted());
+        System.out.print("Acres Planted: %d");
         
+        //Display wheat in store
+        System.out.format("You have %d bushel of wheat in store", cropData.getWheatInStore());
+        System.out.print("Wheat in Store: %d");
+    
     }
     
-    //The viewDevelopers method
-    //Purpose: view the developers of the game
-    //Parameters: none
-    //Returns: none
-    public void viewDevelopers()
-    {
-       
-    }
-    
-
 }
