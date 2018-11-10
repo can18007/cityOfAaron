@@ -166,6 +166,7 @@ public class CropControl
     if (harvest < 0)
         return -1;
     
+    cropData.setOffering(harvestOffering);
     return harvestOffering;
     }
 
