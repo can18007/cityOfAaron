@@ -131,15 +131,12 @@ public class CropView
         
         //Display the number of acres owned
         System.out.format("You own %d acres", cropData.getAcresOwned());
-        System.out.print("Acres Owned: %d");
     
         //Display acres planted
         System.out.format("You have %d acres planted", cropData.getAcresPlanted());
-        System.out.print("Acres Planted: %d");
         
         //Display wheat in store
         System.out.format("You have %d bushel of wheat in store", cropData.getWheatInStore());
-        System.out.print("Wheat in Store: %d");
     
     }
     
