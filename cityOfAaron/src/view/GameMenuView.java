@@ -71,9 +71,14 @@ public class GameMenuView
         {
             // get user input from keyboard
             userInput = keyboard.nextInt();
-            //if it is not a valid value, output an error message
-            if(userInput < 1 || userInput > MAX)
+            //if the userInput is valid return here
+            if(userInput >= 1 && userInput <= MAX){
+                return userInput;
+            }else{
+                //if it is not a valid value, output an error message
                 System.out.println("Error: you must select 1, 2, 3, 4, or 5");
+            }
+            
             //loop back to the top of the loop if input was not valid
             // end loop
         } while (userInput < 1 || userInput > MAX);
@@ -111,7 +116,7 @@ public class GameMenuView
     
     public void viewList()
     {
-        //System.out.println("\nView list option selected.");
+        System.out.println("\nView list option selected.");
         
         //display list menu
         ListMenuView lmv = new ListMenuView();
