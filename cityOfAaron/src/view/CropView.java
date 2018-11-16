@@ -65,6 +65,7 @@ public class CropView
         
         // add calls to the other crop view methods
         // as they are written
+        displayCropsReportView();
     }
     
      public static void sellLandView()
@@ -130,14 +131,13 @@ public class CropView
         System.out.println("\n Crop Report");
         
         //Display the number of acres owned
-        System.out.format("You own %d acres", cropData.getAcresOwned());
+        System.out.format("You own %d acres%n", cropData.getAcresOwned());
     
         //Display acres planted
-        System.out.format("You have %d acres planted", cropData.getAcresPlanted());
+        System.out.format("You have %d acres planted%n", cropData.getAcresPlanted());
         
         //Display wheat in store
-        System.out.format("You have %d bushel of wheat in store", cropData.getWheatInStore());
-    
+        System.out.format("You have %d bushel of wheat in store%n", cropData.getWheatInStore());
     }
     
 }
