@@ -10,19 +10,16 @@ import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import control.*;
         
-public class HelpMenuView 
+public class HelpMenuView extends MenuView
 {
-    private String helpMenu;
-    private int max;
-    Scanner keyboard = new Scanner(System.in);
-    
+  
    // The HelpMenuView constructor
    // Purpse: Initialize the help menu data
    // Parameters: none
    // Returns: none
    public HelpMenuView() 
    {    
-       helpMenu = "\n"+
+       super("\n"+
                 "******************************\n"+
                 "*CITY OF AARON: HELP MENU *\n"+
                 "******************************\n"+
@@ -31,61 +28,17 @@ public class HelpMenuView
                 "3 - How do I view the map? \n"+
                 "4 - How do I move to another location? \n"+
                 "5 - How do I display the list of animals, provisions and tools in the city storehouse? \n"+
-                "6 - Back to the Main Menu. \n";
+                "6 - Back to the Main Menu. \n",
         
-        max = 6;
+        6);
    }
-
-   // The displayMenuView method
-   // Purpose: displays the menu, get the user's input, and does the selected action
+    
+   // The doActoin method
+   // Purpose: performs the selected action
    // Parameters: none
    // Returns: none
-    public void displayMenuView()
-    {
-        // execute this loop as long as the selected option is not 6
-        int menuOption = 0;
-        do
-        {
-            //display the help menu
-            System.out.println(helpMenu);
-            
-            //get the user's selection
-            menuOption = getMenuOption();
-            
-            //perform the selected action
-            doAction(menuOption);
-            
-        }while (menuOption != max);  
-        
-    }//end of displayHelpMenu method
-    
-    
-    
-// The getMenuOption method
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: integer - the option selected
-    public int getMenuOption()
-    {
-        // declare a variable to hold user's input
-        int userInput = 0;
-        final int MAX = 6;
-        //begin loop
-        do
-        {
-            // get user input from keyboard
-            userInput = keyboard.nextInt();
-            //if it is not a valid value, output an error message
-            if(userInput < 1 || userInput > MAX)
-                System.out.println("Error: you must select 1, 2, 3, 4, 5, or 6");
-            //loop back to the top of the loop if input was not valid
-            // end loop
-        } while (userInput < 1 || userInput > MAX);
-        return userInput;
-    }
-    
-    
-    public void doAction(int option)
+   // =====================================
+    @Override public void doAction(int option)
     {
         switch(option)
         {
