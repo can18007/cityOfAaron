@@ -212,10 +212,12 @@ public class CropControlTest {
      */
     @Test
     public void testSetOffering1() {
-        System.out.println("setOffering");
-        int harvestOffering = 5;
-        CropData cropData = null;
-        int expResult = 5;
+        System.out.println("Set Offering - Test 1");
+        CropData cropData = new CropData();
+        cropData.setHarvest(5);
+        
+        int harvestOffering = 10;
+        int expResult = 10;
         int result = CropControl.setOffering(harvestOffering, cropData);
         assertEquals(expResult, result);
     }
@@ -225,9 +227,11 @@ public class CropControlTest {
      */
     @Test
     public void testSetOffering2() {
-        System.out.println("setOffering");
-        int harvestOffering = -10;
-        CropData cropData = null;
+        System.out.println("Set Offering - Test 2");
+        CropData cropData = new CropData();
+        cropData.setHarvest(-10);
+        
+        int harvestOffering = 10;
         int expResult = -1;
         int result = CropControl.setOffering(harvestOffering, cropData);
         assertEquals(expResult, result);
@@ -238,9 +242,11 @@ public class CropControlTest {
      */
     @Test
     public void testSetOffering3() {
-        System.out.println("setOffering");
-        int harvestOffering = 110;
-        CropData cropData = null;
+        System.out.println("Set Offering - Test 3");
+        CropData cropData = new CropData();
+        cropData.setHarvest(5);
+        
+        int harvestOffering= -10;
         int expResult = -1;
         int result = CropControl.setOffering(harvestOffering, cropData);
         assertEquals(expResult, result);
@@ -251,9 +257,11 @@ public class CropControlTest {
      */
     @Test
     public void testSetOffering4() {
-        System.out.println("setOffering");
+        System.out.println("Set Offering - Test 4");
+        CropData cropData = new CropData();
+        cropData.setHarvest(5);
+        
         int harvestOffering = 0;
-        CropData cropData = null;
         int expResult = 0;
         int result = CropControl.setOffering(harvestOffering, cropData);
         assertEquals(expResult, result);
@@ -264,9 +272,11 @@ public class CropControlTest {
      */
     @Test
     public void testSetOffering5() {
-        System.out.println("setOffering");
+        System.out.println("Set Offering - Test 5");
+        CropData cropData = new CropData();
+        cropData.setHarvest(5);
+        
         int harvestOffering = 100;
-        CropData cropData = null;
         int expResult = 100;
         int result = CropControl.setOffering(harvestOffering, cropData);
         assertEquals(expResult, result);

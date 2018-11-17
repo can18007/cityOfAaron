@@ -13,7 +13,8 @@ import cityofaaron.CityOfAaron;
  *
  * @author lgn-cunrz-hr
  */
-public class CropView {
+public class CropView
+{
     
     //Create a Scanner object
     private static Scanner keyboard = new Scanner(System.in);
@@ -22,7 +23,8 @@ public class CropView {
     static private Game game = CityOfAaron.getGame();
     static private CropData cropData = game.getCropData();
     
-  
+    
+    
     // The buyLandView method
     // Purpose: interface with the user input for buying land
     // Parameters: none
@@ -63,6 +65,7 @@ public class CropView {
         
         // add calls to the other crop view methods
         // as they are written
+        displayCropsReportView();
     }
     
      public static void sellLandView()
@@ -87,10 +90,20 @@ public class CropView {
      
     // feedPeopleView method - Autohor: Megan Hendrickson
      public static void feedPeopleView()
-    {
+    {      
         // Prompt the user to enter the number of bushels of wheat to set aside
         System.out.print("\nHow many bushels of grain do you want to set aside to feed the people?");
         
+        //  Get the user’s input and save it.
+        int feedPeople;
+        feedPeople = keyboard.nextInt();
+        
+        //call feedPeople() method in the Control Layer 
+        CropControl.feedPeople(feedPeople, cropData);
+        
+        //Display the number of acres of wheat that have been planted and the amount of wheat left in storage.
+        System.out.format("You have set aside %d bushells of grain to feed people.", cropData.getWheatForFood());
+        System.out.format("\nYou now have %d bushels of grain left in storage", cropData.getWheatInStore());
     }
     
     public static void plantCropsView()
@@ -107,14 +120,25 @@ public class CropView {
         CropControl.plantCrops(toPlant, cropData);
         
         //Display the number of acres of wheat that have been planted and the amount of wheat left in storage.
-        System.out.format("You have been panted %d of acres of wheat", cropData.getAcresPlanted());
-        System.out.format("\nYou now have %d wheat left in storage", cropData.getWheatInStore());
-      
+        System.out.format("You have planted %d of acres of wheat", cropData.getAcresPlanted());
+        System.out.format("\nYou now have %d wheat left in storage", cropData.getWheatInStore()); 
     }
     
-    public static void displayCropsReportVew()
+
+    public static void displayCropsReportView()
     {
-       
+        //Tell the user they are viewing the crop report
+        System.out.println("\n Crop Report%n");
+        
+        //Display the number of acres owned
+        System.out.format("You own %d acres%n", cropData.getAcresOwned());
+    
+        //Display acres planted
+        System.out.format("You have %d acres planted%n", cropData.getAcresPlanted());
+        
+        //Display wheat in store
+        System.out.format("You have %d bushel of wheat in store%n", cropData.getWheatInStore());
+    
     }
-     
+    
 }
