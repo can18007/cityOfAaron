@@ -66,6 +66,9 @@ public class CropView
         // add calls to the other crop view methods
         // as they are written
         displayCropsReportView();
+        
+        //call the feedPeopleView method
+        feedPeopleView();
     }
     
      public static void sellLandView()

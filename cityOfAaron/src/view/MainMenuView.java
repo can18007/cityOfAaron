@@ -76,7 +76,7 @@ public class MainMenuView extends MenuView
               
        //Display the Game menu
        GameMenuView gmv = new GameMenuView();
-       gmv.displayGameMenuView();
+       gmv.displayMenu();
        
        //test for list menu
        //ListMenuView lmv = new ListMenuView();
