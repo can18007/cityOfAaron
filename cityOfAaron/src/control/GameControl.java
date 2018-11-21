@@ -52,6 +52,7 @@ public class GameControl {
     public static void createCropDataObject()
     {
         CropData theCrops = new CropData();
+        Game theGame = new Game();
         
         theCrops.setYear(0);
         theCrops.setPopulation(100);
@@ -75,7 +76,7 @@ public class GameControl {
     public static void createMap()
     {
         //create the Map object, it is 5 x 5
-        //refert to the Map constructor
+        //refer to the Map constructor
         Map theMap = new Map(MAX_ROW, MAX_COL);
         
         //create a string that will go in the Location objects that contain the river
@@ -107,5 +108,84 @@ public class GameControl {
         loc.setSymbol("!!!");
         theMap.setLocation(0, 2, loc);
         
+        //set another farmland location
+        loc = new Location();
+        loc.setDescription(farmland);
+        loc.setSymbol("!!!");
+        
+//set this location object in each cell of the array in column 4
+        for(int i=0; i < MAX_ROW; i++)
+        {
+            theMap.setLocation(i, 3, loc);
+        }
+        
+        //define the string for a village location
+        String village = "\nYou are in the village." +
+                         "\nThe village is filled with good and faithful people." +
+                         "\nEnjoy your stay.";
+        
+        //set village location with a hint
+        loc = new Location();
+        loc.setDescription(village + "It takes 20 bushels of wheat to feed one person.");
+        loc.setSymbol("^^^");
+        theMap.setLocation(1, 2, loc);
+        
+        //define the string for a Ruler's Court location
+        String court = "\nYou are standing in the Ruler's Court." +
+                          "\nThe court is the center of our city";
+        
+        //set Ruler's Court location
+        loc = new Location();
+        loc.setDescription(court);
+        loc.setSymbol("***");
+        theMap.setLocation(2, 2, loc);
+        
+        //define the string for a Granary & Storehouse location
+        String granary = "\nThis is the Granary and Storehouse";
+        
+        //set Granary & Storehouse location
+        loc = new Location();
+        loc.setDescription(granary);
+        loc.setSymbol("$$$");
+        theMap.setLocation(2, 3, loc);
+        
+        //define the string for Wilderness location
+        String wilderness = "\nYou are now standing at the Wilderness edge." +
+                            "\nThe wilderness marks the south boundary of our city.";
+        
+        //set Wilderness location
+        loc = new Location();
+        loc.setDescription(wilderness);
+        loc.setSymbol("###");
+        theMap.setLocation(2, 4, loc);
+        
+         //define the string for Undeveloped land location
+        String land = "\nThis land is undeveloped.";
+        
+         //set undeveloped land location
+        loc = new Location();
+        loc.setDescription(land);
+        loc.setSymbol("+++");
+        
+        //set this location object in each cell of the array in column 4
+        for(int i=0; i < MAX_ROW; i++)
+        {
+            theMap.setLocation(i, 1, loc);
+        }
+        
+        //define the string for Lamanite Border location
+        String border = "\nYou are now standing at the Lamanaite Border." +
+                            "\nThe Lamanite border is the West boundary of our city.";
+        
+         //set Lamanite border location
+        loc = new Location();
+        loc.setDescription(border);
+        loc.setSymbol("===");
+        
+        //set this location object in each cell of the array in column 4
+        for(int i=0; i < MAX_ROW; i++)
+        {
+            theMap.setLocation(i, 0, loc);
+        }
     }
 }
