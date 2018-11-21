@@ -66,6 +66,9 @@ public class CropView
         // add calls to the other crop view methods
         // as they are written
         displayCropsReportView();
+        
+        //call the feedPeopleView method
+        feedPeopleView();
     }
     
      public static void sellLandView()
@@ -128,7 +131,7 @@ public class CropView
     public static void displayCropsReportView()
     {
         //Tell the user they are viewing the crop report
-        System.out.println("\n Crop Report");
+        System.out.println("\n Crop Report%n");
         
         //Display the number of acres owned
         System.out.format("You own %d acres%n", cropData.getAcresOwned());
@@ -138,6 +141,7 @@ public class CropView
         
         //Display wheat in store
         System.out.format("You have %d bushel of wheat in store%n", cropData.getWheatInStore());
+    
     }
     
 }
