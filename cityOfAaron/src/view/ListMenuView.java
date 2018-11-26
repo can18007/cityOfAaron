@@ -66,15 +66,23 @@ public class ListMenuView extends MenuView{
          System.out.println("\nDisplay listTools selected.");
     }
     
+    //The listProvisions method 
+    //Purpose: list provision of the game
+    //Parameters: none
+    //Returns: none
+    //author: wcanar
     public static void listProvisions() {
          
-        //GameControl.printList();
-        // List or view the animals in the storehouse
+        // Call the game Class and assign to theGame variable class
         Game theGame = CityOfAaron.getGame();
+        
+        //assign values from provisions and assing to the provisions array
         ArrayList<ListItem> provisions = theGame.getProvisions();
    
+        //print header
         System.out.format("%-16s%-24s\n", "Provisions", "Quantity");
-  
+ 
+        //print list
         for(ListItem provision : provisions) { 
             System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
         }
