@@ -9,6 +9,9 @@ package view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import control.*;
+import java.util.ArrayList;
+import model.*;
+
 
 /**
  *
@@ -64,7 +67,19 @@ public class ListMenuView extends MenuView{
     }
     
     public static void listProvisions() {
-         System.out.println("\nDisplay listProvisions selected.");
+         
+        //GameControl.printList();
+        // List or view the animals in the storehouse
+        Game theGame = CityOfAaron.getGame();
+        ArrayList<ListItem> provisions = theGame.getProvisions();
+   
+        System.out.format("%-16s%-24s\n", "Provisions", "Quantity");
+  
+        for(ListItem provision : provisions) { 
+            System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
+        }
+       
+
     }
     
     public static void listTeam() {
