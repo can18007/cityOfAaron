@@ -47,5 +47,22 @@ public class Map {
     public void setLocation(int row, int col, Location _location)
     {
         locations[row][col]= _location;
-    }        
+    }
+    
+    //The getRowCount method
+    //Purpose: retuns the rowCount
+    public int getRowCount(){
+        return this.rowCount;
+    }
+    
+    //The getColCount method
+    //Purpose: retuns the colCount
+    public int getColCount(){
+        return this.colCount;
+    }
+    
+ 
+    
+  
+    
 }

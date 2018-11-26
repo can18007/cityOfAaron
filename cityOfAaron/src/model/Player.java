@@ -15,7 +15,7 @@ public class Player implements Serializable {
     public Player(){
     }
 
-    public void setName(String _name){
+    public void setPlayerName(String _name){
         this.name = _name;
     }
 

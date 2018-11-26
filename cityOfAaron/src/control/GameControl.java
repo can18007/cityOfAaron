@@ -6,6 +6,7 @@
 package control;
 import model.*;
 import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,44 +17,41 @@ public class GameControl {
     //size of the Location array
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
+    private static Game theGame = new Game();
     
-    public static void createNewGame(String _name) {
-        
-    // Create a new Game object.
-    Game game = new Game();
-    
-    // Create a new Player object
-    Player player = new Player();
-    player.setName(_name);
-    
-    //save reference to the player object in the game
-    game.setPlayer(player);
-    
-    //save a reference to it in the Game object
-    CropData cropData = new CropData();
-    cropData.setYear(0);
-    cropData.setPopulation(100);
-    cropData.setNewPeople(5);
-    cropData.setCropYield(3);
-    cropData.setNumberWhoDied(0);
-    cropData.setWheatInStore(2700);
-    cropData.setAcresOwned(1000);
-    cropData.setAcresPlanted(1000);
-    cropData.setHarvest(3000);
-    cropData.setOfferingBushels(300);
-    cropData.setAcresPlanted(1000); 
-    game.setCropData(cropData); 
+    public static void createNewGame(String pName) {
+       
+              
+        // Create a new Player object
+        Player thePlayer = new Player();
+        thePlayer.setPlayerName(pName);
 
-    // Save a reference to the Game object in the static variable
-    CityOfAaron.setGame(game);
+        //save reference to the player object in the game
+        theGame.setPlayer(thePlayer);
+
+        //save a reference to it in the Game object
+        CropData cropData = new CropData();
+      
+        //CreateCropDataObject
+        createCropDataObject();
+        
+        //Create Map 
+        createMap();
+        
+        //Create prvision list
+        createProvisionsList();
+
+
+        // Save a reference to the Game object in the static variable
+        CityOfAaron.setGame(theGame);
+        
         
     }
     
     public static void createCropDataObject()
     {
         CropData theCrops = new CropData();
-        Game theGame = new Game();
-        
+               
         theCrops.setYear(0);
         theCrops.setPopulation(100);
         theCrops.setNewPeople(5);
@@ -113,7 +111,7 @@ public class GameControl {
         loc.setDescription(farmland);
         loc.setSymbol("!!!");
         
-//set this location object in each cell of the array in column 4
+        //set this location object in each cell of the array in column 4
         for(int i=0; i < MAX_ROW; i++)
         {
             theMap.setLocation(i, 3, loc);
@@ -187,5 +185,30 @@ public class GameControl {
         {
             theMap.setLocation(i, 0, loc);
         }
+        
+        theGame.setMap(theMap);
     }
+
+    //The createProvisionList method 
+    //Purpose: add list to provison on the game
+    //Parameters: none
+    //Returns: none
+    public static void createProvisionsList(){
+        ArrayList<ListItem> provisions = new ArrayList<>();
+      
+        provisions.add(new ListItem("Tinned Soups",12));
+        provisions.add(new ListItem("small packs of Rice",23));
+        provisions.add(new ListItem("Cuppoa Soup",123));
+        provisions.add(new ListItem("Jellies",50));
+        
+        //for (ListItem item:provisions){
+        //    System.out.println(provisions);
+        //}
+     
+       
+        theGame.setProvisions(provisions);
+       
+       
+    }
+ 
 }
