@@ -38,6 +38,9 @@ public class GameControl {
         //Create Map 
         createMap();
         
+        //Create Animal List
+        createAnimalList();
+        
         //Create prvision list
         createProvisionsList();
 
@@ -187,6 +190,23 @@ public class GameControl {
         }
         
         theGame.setMap(theMap);
+    }
+    
+    // the animalList method
+    // Purpose: add item to animal list
+    // Parameters: none
+    // Returns: none
+    public static void createAnimalList(){
+        ArrayList<ListItem> animals = new ArrayList<>();
+        
+        animals.add(new ListItem("Cows", 15));
+        animals.add(new ListItem("Horses", 20));
+        animals.add(new ListItem("Pigs", 8));
+        animals.add(new ListItem("Goats", 6));
+        animals.add(new ListItem("Sheep", 7));
+        
+        theGame.setAnimals(animals);
+        
     }
 
     //The createProvisionList method 
