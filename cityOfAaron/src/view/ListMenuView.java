@@ -62,8 +62,26 @@ public class ListMenuView extends MenuView{
          System.out.println("\nDisplay List Animals elected.");
     }
     
+    //The listTools Method
+    //Purpose: display list of tools in storehouse
+    //Parameters: none
+    //Return: none
+    //Author: Megan Hendrickson
     public static void listTools() {
-         System.out.println("\nDisplay listTools selected.");
+         //Call Game class and assign to theGame variable
+         Game theGame = CityOfAaron.getGame();
+         
+         //get values from tools list
+         ArrayList<ListItem> tools = theGame.getTools();
+         
+         //print header
+        System.out.format("%-16s%-24s\n", "Tools", "Quantity");
+ 
+        //print list
+        for(ListItem tool : tools) { 
+            System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
+        }
+         
     }
     
     //The listProvisions method 
