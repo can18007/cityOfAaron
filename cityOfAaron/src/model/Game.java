@@ -16,6 +16,7 @@ public class Game implements Serializable {
     private Player thePlayer;
     private CropData cropData;
     private ArrayList<ListItem> provisions;
+    private ArrayList<ListItem> tools;
         
     //private Game theGame;
     
@@ -58,4 +59,11 @@ public class Game implements Serializable {
         return provisions;
     }
     
+    public void setTools(ArrayList<ListItem> _tools ){
+        tools = new ArrayList<ListItem>(_tools);
+    }
+    
+    public ArrayList<ListItem> getTools( ){
+        return tools;
+    }
 }

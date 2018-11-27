@@ -38,8 +38,11 @@ public class GameControl {
         //Create Map 
         createMap();
         
-        //Create prvision list
+        //Create provision list
         createProvisionsList();
+        
+        //Create tools list
+        createToolsList();
 
 
         // Save a reference to the Game object in the static variable
@@ -211,4 +214,20 @@ public class GameControl {
        
     }
  
+    //The createToolsList method 
+    //Purpose: create a list of tools
+    //Parameters: none
+    //Returns: none
+    //Author: Megan Hendrickson
+    public static void createToolsList(){
+        ArrayList<ListItem> tools = new ArrayList<>();
+        
+        tools.add(new ListItem("Hoe", 25));
+        tools.add(new ListItem("Sickle", 20));
+        tools.add(new ListItem("Hand Plow", 5));
+        tools.add(new ListItem("Pitchfork", 15));
+        tools.add(new ListItem("Shaduf", 10));
+     
+        theGame.setTools(tools);
+    }
 }
