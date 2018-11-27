@@ -16,6 +16,7 @@ public class Game implements Serializable {
     private Player thePlayer;
     private CropData cropData;
     private ArrayList<ListItem> provisions;
+    private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
         
     //private Game theGame;
@@ -49,6 +50,15 @@ public class Game implements Serializable {
 
     public CropData getCropData( ){
         return this.cropData;
+    }
+    
+    public void setAnimals(ArrayList<ListItem> _animals)
+    {
+        animals = _animals;
+    }
+    
+    public ArrayList<ListItem> getAnimals(){
+        return animals;
     }
     
     public void setProvisions(ArrayList<ListItem> _provisions ){

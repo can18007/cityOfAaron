@@ -57,11 +57,7 @@ public class ListMenuView extends MenuView{
                 return;
         }
     }
-    
-    public static void listAnimals() {
-         System.out.println("\nDisplay List Animals elected.");
-    }
-    
+     
     //The listTools Method
     //Purpose: display list of tools in storehouse
     //Parameters: none
@@ -82,6 +78,26 @@ public class ListMenuView extends MenuView{
             System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
         }
          
+    }
+    
+    
+    //The listAnimals method
+    //Purpose: list the animals in the game
+    //Parameters: none
+    //Returns: none
+    //Author: McKell Painter
+    public static void listAnimals() {
+        
+        //get the arraylist from the Game object
+        Game theGame = CityOfAaron.getGame();
+        
+        //get the ListItem out of the ArrayList
+        ArrayList<ListItem> animals = theGame.getAnimals();
+        
+        //display the name of the item and the number of items
+        for (ListItem animal :animals) {
+            System.out.println(animal.getName() + '\t' + animal.getNumber());
+        }
     }
     
     //The listProvisions method 
