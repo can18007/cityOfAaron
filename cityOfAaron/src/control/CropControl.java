@@ -4,7 +4,7 @@ City of Aaron Project
  * class contains all of the calculation methods for managing 
 the crops
  * CIT-260
- * Spring 2018
+ * Fall 2018
  * Team members: Megan Hendrickson, McKell Painter, Wladimir 
 Canar
  */
@@ -13,6 +13,7 @@ package control;
 
 import java.util.Random;
 import model.CropData;
+import exceptions.CropException;
 
 public class CropControl
 {
@@ -68,25 +69,25 @@ public class CropControl
 /**
 * The buyLand method
 * Purpose: To buy land
-* @param the price of land
-* @param the number of acres to buy
-* @param a reference to a CropData object
+* the price of land
+* the number of acres to buy
+* a reference to a CropData object
 * @ return the number of acres of land now owned
 * Pre-conditions: acres to be bought must be positive
 * and the amount of wheat owned >= the cost to buy the land
 * author 
 */
 
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
+    public static void buyLand(int landPrice, int acresToBuy, CropData cropData)throws CropException
     {
         // if acresToBuy < 0, return -1
         if(acresToBuy < 0)
-            return -1;
+            throw new CropException("A negative value was input.");
         
         // if acresToBay*landPrice > wheatInStore, return -1
         int wheatInStore = cropData.getWheatInStore();
         if(acresToBuy*landPrice > wheatInStore)
-            return -1;
+            throw new CropException("There is insufficient wheat to buy this much land.");
         
         // acresOwned = acresOwned + acresToBuy
         int acresOwned = cropData.getAcresOwned();
@@ -97,9 +98,6 @@ public class CropControl
         int wheat = cropData.getWheatInStore();
         wheat -= (acresToBuy*landPrice);
         cropData.setWheatInStore(wheat);
-        
-        // return acresOwned
-        return acresOwned;
     }
 
 /**
