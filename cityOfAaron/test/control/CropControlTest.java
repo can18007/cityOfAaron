@@ -42,8 +42,13 @@ public class CropControlTest {
         CropData cropData = new CropData();
         cropData.setAcresOwned(2800);
         int expResult = 2790;
-        int result = CropControl.sellLand(landPrice,acresToSell, cropData);
-        assertEquals(expResult, result);     
+        try {
+            CropControl.sellLand(landPrice,acresToSell, cropData);
+            assertEquals(expResult, cropData.getAcresOwned()); 
+        } catch (Exception e){
+            fail("Unexpected exception: + e.getMessage()");
+        }
+              
     }
     
      /**
