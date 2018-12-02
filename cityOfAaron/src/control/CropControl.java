@@ -175,29 +175,28 @@ public class CropControl
      * @return the number of bushels in store 
      * Pre-conditions: bushels set aside to feed people must be >= 0
      * and bushels to set aside must be <= bushels in store
-     * author: Megan Hendrickson
+     * author: Wladimi Canar
     */
 
-    public static int feedPeople(int feedPeople, CropData cropData) 
+    public static void feedPeople(int feedPeople, CropData cropData)throws CropException 
     { 
-    // If feedPeople < 0, return -1
+        //if feedPeople is negaive send error mesage
         if(feedPeople < 0)
-            return -1;
+            throw new CropException("A negative value was input.");
     
-    // If feedPeople > wheatInStore, return -1
+        // If feedPeople > wheatInStore, send error message
         int wheat = cropData.getWheatInStore();
         if(feedPeople > wheat)
-            return -1;
+            throw new CropException("No enougth people to wheat.");
+
     
-// Store the amount of wheat allocated to feedPeople
+        // Store the amount of wheat allocated to feedPeople
         cropData.setWheatForFood(feedPeople);
         
-    // wheatInStore = wheatInStore - feedPeople
+        // wheatInStore = wheatInStore - feedPeople
         wheat -= feedPeople;
         cropData.setWheatInStore(wheat);
 
-    // return wheatInStore
-        return wheat;
     }
     
 }
