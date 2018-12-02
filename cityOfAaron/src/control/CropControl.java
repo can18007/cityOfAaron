@@ -109,30 +109,27 @@ public class CropControl
 */
 
 
-    public static int plantCrops(int landPlant, CropData cropData)
+    public static int plantCrops(int landPlant, CropData cropData) throws CropException
     {
         // if landPlant <= 0 return -1
-        if(landPlant <= 0){
-            return -1;
-        }
+        if(landPlant <= 0)
+            throw new CropException("A negative value was input.");
         
         // if acresOwned < landPlant, return -1
         int acresOwned = cropData.getAcresOwned();
-        if(acresOwned < landPlant) {
-            return -1;
-        }
+        if(acresOwned < landPlant) 
+            throw new CropException("You do not own this much land.");
         
         //If enoughPeople*10 < landPlant, return -1
         int population = cropData.getPopulation();
-        if (population*10 < landPlant){
-            return -1;
-        }
+        if (population*10 < landPlant)
+            throw new CropException("Insufficient population to tend the crops.");
         
         //If enoughWheat*2 < landPlant, return -1
         int wheatInStore = cropData.getWheatInStore();
-        if (wheatInStore * 2 < landPlant) {
-            return -1;
-        } else {
+        if (wheatInStore * 2 < landPlant) 
+            throw new CropException("Insufficient wheat in store to plant.");
+        else {
             wheatInStore = wheatInStore - (landPlant/2);
             cropData.setWheatInStore(wheatInStore);
             cropData.setAcresPlanted(landPlant);
