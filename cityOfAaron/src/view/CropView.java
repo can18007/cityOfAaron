@@ -119,18 +119,33 @@ public class CropView
         System.out.format("You now own %d acres of land", cropData.getAcresOwned());  
     }
      
-    // feedPeopleView method - Autohor: Megan Hendrickson
+    // feedPeopleView method - Autohor: wladimir canar
      public static void feedPeopleView()
     {      
         // Prompt the user to enter the number of bushels of wheat to set aside
-        System.out.print("\nHow many bushels of grain do you want to set aside to feed the people?");
         
         //  Get the user’s input and save it.
         int feedPeople;
-        feedPeople = keyboard.nextInt();
+        boolean paramsNotOkay;
+        do
+        {
+            paramsNotOkay = false;
+            System.out.print("\nHow many bushels of grain do you want to set aside to feed the people?");
+            feedPeople = keyboard.nextInt();
+            try
+            {
+                // Call the feedPeople( ) method in the control layer to feed the people
+                CropControl.feedPeople(feedPeople, cropData);
+ 
+            }
+            catch(CropException e)
+            {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        }while(paramsNotOkay);
         
-        //call feedPeople() method in the Control Layer 
-        CropControl.feedPeople(feedPeople, cropData);
         
         //Display the number of acres of wheat that have been planted and the amount of wheat left in storage.
         System.out.format("You have set aside %d bushells of grain to feed people.", cropData.getWheatForFood());

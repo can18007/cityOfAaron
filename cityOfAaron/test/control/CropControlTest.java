@@ -319,8 +319,14 @@ public class CropControlTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(20);
         int expResult = 10;
-        int result = CropControl.feedPeople(feedPeople, cropData);
-        assertEquals(expResult, result);
+        try {
+            CropControl.feedPeople(feedPeople, cropData);
+            assertEquals(expResult, cropData.getWheatForFood());
+    
+        } catch (Exception e){
+            fail("Unexpected exception: + e.getMessage()");
+        }    
+
     }
 
      /**
@@ -335,8 +341,13 @@ public class CropControlTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(20);
         int expResult = -1;
-        int result = CropControl.feedPeople(feedPeople, cropData);
-        assertEquals(expResult, result);
+        try {
+            CropControl.feedPeople(feedPeople, cropData);
+            assertEquals(expResult, cropData.getWheatForFood());
+    
+        } catch (Exception e){
+            fail("Unexpected exception: + e.getMessage()");
+        }  
     }
     
      /**
@@ -351,8 +362,13 @@ public class CropControlTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(10);
         int expResult = -1;
-        int result = CropControl.feedPeople(feedPeople, cropData);
-        assertEquals(expResult, result);
+        try {
+            CropControl.feedPeople(feedPeople, cropData);
+            assertEquals(expResult, cropData.getWheatForFood());
+    
+        } catch (Exception e){
+            fail("Unexpected exception: + e.getMessage()");
+        }  
     }
     
      /**
@@ -367,8 +383,13 @@ public class CropControlTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(50);
         int expResult = 50;
-        int result = CropControl.feedPeople(feedPeople, cropData);
-        assertEquals(expResult, result);  
+        try {
+            CropControl.feedPeople(feedPeople, cropData);
+            assertEquals(expResult, cropData.getWheatForFood());
+    
+        } catch (Exception e){
+            fail("Unexpected exception: + e.getMessage()");
+        }  
     }
     
      /**
@@ -383,8 +404,13 @@ public class CropControlTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(50);
         int expResult = 0;
-        int result = CropControl.feedPeople(feedPeople, cropData);
-        assertEquals(expResult, result);
+        try {
+            CropControl.feedPeople(feedPeople, cropData);
+            assertEquals(expResult, cropData.getWheatForFood());
+    
+        } catch (Exception e){
+            fail("Unexpected exception: + e.getMessage()");
+        }  
     }
 }
 
