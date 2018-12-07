@@ -6,6 +6,10 @@
 package control;
 import model.*;
 import cityofaaron.CityOfAaron;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +22,41 @@ public class GameControl {
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     private static Game theGame = new Game();
+    
+    
+    public static void getSavedGame(String filePath){
+    
+        Game theGame = null;
+  
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game)  input.readObject();
+            CityOfAaron.setGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }    
+    }
+    
+    public static void SavedGame(Game theGame, String filePath){
+     
+  
+        try (FileOutputStream fips = new FileOutputStream(filePath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fips);
+            output.writeObject(theGame);
+            CityOfAaron.setGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }    
+        
+        
+    }
+    
     
     public static void createNewGame(String pName) {
        
