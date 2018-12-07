@@ -252,4 +252,26 @@ public class GameControl {
      
         theGame.setTools(tools);
     }
+    
+    //the getSavedGame method
+    //Purpose: load a saved game from disk
+    //Parameters: the file path
+    //Returns: none
+    //Side Effect: the game reference in the driver is updated
+    public static void getSavedGame(String filePath)
+    {
+        Game theGame = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game) input.readObject();
+            CityOfAaron.setCurrentGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }
+    }
+    
 }
