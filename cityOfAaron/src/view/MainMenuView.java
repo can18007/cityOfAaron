@@ -9,6 +9,7 @@ package view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import control.*;
+import model.Game;
         
 public class MainMenuView extends MenuView
 {  
@@ -85,11 +86,12 @@ public class MainMenuView extends MenuView
     }
 
     // The startSavedGame method
-    // Purpose: saves the game
+    // Purpose: loads a saved game object from disk and start the game
     // Parameters: none
     // Returns: none
+    // =========================
     public void startSavedGame()
-    {
+    {  
         //get rid of nl character left in the stream
         String filepath = keyboard.next();
         
@@ -102,9 +104,31 @@ public class MainMenuView extends MenuView
         //display the game menu for the loaded game
         GameMenuView gmv = new GameMenuView();
         gmv.displayMenu();
-
     }
+    
+    
+    
+    
+        public void saveGame()
+    {  
+        
+        Game theGame = CityOfAaron.getGame();
+        //get rid of nl character left in the stream
+        String filepath = keyboard.next();
+        
+        //prompt user and get a file path
+        System.out.println("\nPlease enter the file to save your game.");
+        
+        //call the getSavedGame() method in the GameControl class to load the game
+        GameControl.saveGame(theGame, filepath);
+                
+        //display the game menu for the loaded game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
+    }
+    
 
+    
     // The displayHelpMenuView method
     // Purpose: displays the help menu
     // Parameters: none

@@ -40,7 +40,7 @@ public class GameControl {
         }    
     }
     
-    public static void SavedGame(Game theGame, String filePath){
+    public static void saveGame(Game theGame, String filePath){
      
   
         try (FileOutputStream fips = new FileOutputStream(filePath))
@@ -291,4 +291,7 @@ public class GameControl {
      
         theGame.setTools(tools);
     }
+    
+
+  
 }
