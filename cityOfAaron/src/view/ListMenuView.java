@@ -26,12 +26,13 @@ public class ListMenuView extends MenuView{
                 "*CITY OF AARON: LIST MENU    *\n"+
                 "******************************\n"+
                 "1 - List Animals\n"+
-                "2 - Save Animals\n" +
+                "2 - Save Animals\n"+
                 "3 - List Tools\n"+
-                "4 - List Provisions \n"+
-                "5 - Save Provisions \n"+
-                "6 - List Team \n"+
-                "7 - Return to Game menu\n", 7);
+                "4 - Save Tools\n"+
+                "5 - List Provisions \n"+
+                "6 - Save Provisions \n"+
+                "7 - List Team \n"+
+                "8 - Return to Game menu\n", 8);
    }    
      
     //The doAction method 
@@ -49,19 +50,21 @@ public class ListMenuView extends MenuView{
             case 2: // if the option is 2, call saveAnimals()
                 saveAnimals();
                 break;
-            case 3: // if the option is 2, call listTools()
+            case 3: // if the option is 3, call listTools()
                 listTools();
                 break;
-            case 4: // if the option is 3, call Provisions()
+            case 4: // if the option is 4, call saveTools()
+                saveTools();
+            case 5: // if the option is 5, call Provisions()
                 listProvisions();
                 break;
-            case 5: // if the option is 3, call Provisions()
+            case 6: // if the option is 6, call saveProvisions()
                 saveProvisions();
                 break;
-            case 6: // if the option is 4, call listTeam()
+            case 7: // if the option is 7, call listTeam()
                 listTeam();
                 break;
-            case 7: // if the option is 5, return to the game menu       
+            case 8: // if the option is 8, return to the game menu       
                 return;
        
 
@@ -90,6 +93,27 @@ public class ListMenuView extends MenuView{
          
     }
     
+    //The saveTools method
+    //Purpose: write tool list to disk
+    //Parameters: none
+    //Returns: none
+    //Author: Megan Hendrickson
+    public static void saveTools() {
+        Game theGame = CityOfAaron.getGame();
+        ArrayList<ListItem> tools = theGame.getTools();
+        
+        //prompt user the path and file name to save the list
+        System.out.println("\nPlease enter the path and file name to save your list.");
+        String filepath = keyboard.next();
+        
+        //call the getAnimals() method in the GameControl class to load the game
+        GameControl.saveToolsList(filepath, tools);
+        
+        //display the game menu for the loaded game
+        System.out.println("\nThe Tool List was saved successfully.");
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
+    }
     
     //The listAnimals method
     //Purpose: list the animals in the game
