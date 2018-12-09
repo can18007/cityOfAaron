@@ -10,6 +10,8 @@ import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import control.*;
 import model.Game;
+import java.io.PrintWriter;
+import java.io.IOException;
         
 public class MainMenuView extends MenuView
 {  
@@ -48,7 +50,7 @@ public class MainMenuView extends MenuView
                 displayHelpMenuView();
                 break;
             case 4: // if the option is 4, call displaySaveGame()
-                displaySaveGameView();
+                saveGame();
                 break;
             case 5: // if the option is 5, display a goodbye message
                 System.out.println("Thanks for playing City of Aaron! Goodbye.");
@@ -114,10 +116,10 @@ public class MainMenuView extends MenuView
         
         Game theGame = CityOfAaron.getGame();
         //get rid of nl character left in the stream
-        String filepath = keyboard.next();
+        System.out.println("\nPlease enter the file to save your game.");
         
         //prompt user and get a file path
-        System.out.println("\nPlease enter the file to save your game.");
+        String filepath = keyboard.next();
         
         //call the getSavedGame() method in the GameControl class to load the game
         GameControl.saveGame(theGame, filepath);

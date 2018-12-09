@@ -58,7 +58,21 @@ public class GameControl {
         }    
     }
     
-    
+    public static void saveAnimalList(String filepath, ArrayList<ListItem> animals)
+    {
+        try
+        {
+            PrintWriter out = new PrintWriter(filepath);
+            for(ListItem list: animals){
+                out.write(list + "\n");
+            }
+            out.close();
+        }
+        
+        catch(Exception e){
+            System.out.println("\nThe animal list could not be saved. Try again.");
+        }
+    }
     
     public static void saveList(String filepath, ArrayList<ListItem> provisions) 
     {

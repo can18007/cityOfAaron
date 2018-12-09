@@ -25,12 +25,13 @@ public class ListMenuView extends MenuView{
                 "******************************\n"+
                 "*CITY OF AARON: LIST MENU    *\n"+
                 "******************************\n"+
-                "1 - List Animalas\n"+
-                "2 - List Tools\n"+
-                "3 - List Provisions \n"+
-                "4 - Save Provisions \n"+
-                "5 - List Team \n"+
-                "6 - Return to Game menu\n", 5);
+                "1 - List Animals\n"+
+                "2 - Save Animals\n" +
+                "3 - List Tools\n"+
+                "4 - List Provisions \n"+
+                "5 - Save Provisions \n"+
+                "6 - List Team \n"+
+                "7 - Return to Game menu\n", 7);
    }    
      
     //The doAction method 
@@ -45,20 +46,22 @@ public class ListMenuView extends MenuView{
             case 1: // if the option is 1, call listAnimals()
                 listAnimals();
                 break;
-            case 2: // if the option is 2, call listTools()
+            case 2: // if the option is 2, call saveAnimals()
+                saveAnimals();
+                break;
+            case 3: // if the option is 2, call listTools()
                 listTools();
                 break;
-            case 3: // if the option is 3, call Provisions()
+            case 4: // if the option is 3, call Provisions()
                 listProvisions();
                 break;
-            case 4: // if the option is 3, call Provisions()
+            case 5: // if the option is 3, call Provisions()
                 saveProvisions();
                 break;
-                
-            case 5: // if the option is 4, call listTeam()
+            case 6: // if the option is 4, call listTeam()
                 listTeam();
                 break;
-            case 6: // if the option is 5, return to the game menu       
+            case 7: // if the option is 5, return to the game menu       
                 return;
        
 
@@ -105,6 +108,28 @@ public class ListMenuView extends MenuView{
         for (ListItem animal :animals) {
             System.out.println(animal.getName() + '\t' + animal.getNumber());
         }
+    }
+    
+    //The saveAnimals method
+    //Purpose: save the game's animal list to file
+    //Parameters: none
+    //Returns: none
+    //Author: McKell Painter
+    public static void saveAnimals() {
+        Game theGame = CityOfAaron.getGame();
+        ArrayList<ListItem> animals = theGame.getAnimals();
+        
+        //prompt user the path and file name to save the list
+        System.out.println("\nPlease enter the path and file name to save your list.");
+        String filepath = keyboard.next();
+        
+        //call the getAnimals() method in the GameControl class to load the game
+        GameControl.saveAnimalList(filepath, animals);
+        
+        //display the game menu for the loaded game
+        System.out.println("\nThe Animal List was saved successfully.");
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
     }
     
     //The listProvisions method 
