@@ -64,6 +64,7 @@ public class GameMenuView extends MenuView
     {
         //System.out.println("\nView list option selected.");
         
+        
         //display list menu
         ListMenuView lmv = new ListMenuView();
         lmv.displayMenu();

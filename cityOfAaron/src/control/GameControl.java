@@ -10,7 +10,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -53,10 +56,28 @@ public class GameControl {
         {
             System.out.println("\nThere was an error reading the saved game file");
         }    
-        
-        
     }
     
+    
+    
+    public static void saveList(String filepath, ArrayList<ListItem> provisions) 
+    {
+        try
+        {
+            PrintWriter out = new PrintWriter(filepath);
+            for(ListItem list: provisions){
+               out.write(list + "\n");
+            }
+            out.close();
+               
+        }
+           
+          catch(Exception e){
+          System.out.println("\nThere was an error saving the list");
+      }
+    }
+    
+
     
     public static void createNewGame(String pName) {
        
@@ -291,7 +312,7 @@ public class GameControl {
      
         theGame.setTools(tools);
     }
-    
 
+ 
   
 }

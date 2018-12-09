@@ -28,8 +28,9 @@ public class ListMenuView extends MenuView{
                 "1 - List Animalas\n"+
                 "2 - List Tools\n"+
                 "3 - List Provisions \n"+
-                "4 - List Team \n"+
-                "5 - Return to Game menu\n", 5);
+                "4 - Save Provisions \n"+
+                "5 - List Team \n"+
+                "6 - Return to Game menu\n", 5);
    }    
      
     //The doAction method 
@@ -50,11 +51,17 @@ public class ListMenuView extends MenuView{
             case 3: // if the option is 3, call Provisions()
                 listProvisions();
                 break;
-            case 4: // if the option is 4, call listTeam()
+            case 4: // if the option is 3, call Provisions()
+                saveProvisions();
+                break;
+                
+            case 5: // if the option is 4, call listTeam()
                 listTeam();
                 break;
-            case 5: // if the option is 5, return to the game menu
+            case 6: // if the option is 5, return to the game menu       
                 return;
+       
+
         }
     }
      
@@ -122,6 +129,29 @@ public class ListMenuView extends MenuView{
         }
        
 
+    }
+    
+    //The saveProvisions method 
+    //Purpose: save provision of the game
+    //Parameters: none
+    //Returns: none
+    //author: wcanar
+      public static void saveProvisions() {
+                
+        Game theGame = CityOfAaron.getGame();
+        ArrayList<ListItem> provisions = theGame.getProvisions();
+        
+        //prompt user the path and file name to save the list
+        System.out.println("\nPlease enter the path and file name to save your list.");
+        String filepath = keyboard.next();
+        
+        //call methodo to save the list in a file
+        GameControl.saveList(filepath, provisions);
+        
+        //display the game menu for the loaded game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
+      
     }
     
     public static void listTeam() {
