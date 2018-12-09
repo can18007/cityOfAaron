@@ -91,7 +91,24 @@ public class GameControl {
       }
     }
     
-
+    //The saveToolsList method
+    //Purpose: write list of tools to disk
+    //Author: Megan Hendrickson
+    public static void saveToolsList(String filepath, ArrayList<ListItem> tools)
+    {
+        try
+        {
+            PrintWriter out = new PrintWriter(filepath);
+            for(ListItem list: tools){
+                out.write(list + "\n");
+            }
+            out.close();
+        }
+        
+        catch(Exception e){
+            System.out.println("\nThe Tools List could not be saved. Try again.");
+        }
+    }
     
     public static void createNewGame(String pName) {
        
