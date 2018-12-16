@@ -23,4 +23,25 @@ public class Player implements Serializable {
         return this.name;
     }
     
+    public int mapRow;
+    
+    public void setMapRow(int _mapRow){
+        this.mapRow = _mapRow;
+    }
+    
+    public int getMapRow(){
+        return this.mapRow;
+    }
+    
+    public int mapCol;
+    
+    public void setMapCol(int _mapCol){
+        this.mapCol = _mapCol;
+    }
+    
+    public int getMapCol(){
+        return this.mapCol;
+    }
+    
+    
 }

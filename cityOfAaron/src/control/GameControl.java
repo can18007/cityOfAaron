@@ -286,6 +286,20 @@ public class GameControl {
         theGame.setMap(theMap);
     }
     
+    // the playerCoordinates method
+    // Purpose: set the coordinates of where the player is on the map
+    // Parameters: none
+    // Returns: none
+    // Author: McKell Painter
+    public static void playerCoordinates(){
+        Player thePlayer = new Player();
+        
+        thePlayer.setMapRow(0);
+        thePlayer.setMapCol(0);
+        theGame.setPlayer(thePlayer);
+        
+    }
+    
     // the animalList method
     // Purpose: add item to animal list
     // Parameters: none
