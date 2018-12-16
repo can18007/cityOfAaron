@@ -8,7 +8,8 @@ import model.*;
 import control.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
-import Exceptions.CropException;
+import exceptions.CropException;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -84,6 +85,30 @@ public class CropView
         
         //call the feedPeopleView method
         feedPeopleView();
+        
+        //see if something destorys our crops
+        cataclysmicEvent();
+    }
+    
+    
+    public static void cataclysmicEvent(){
+        
+        int low = 1;
+        int high = 5;
+        int result = ThreadLocalRandom.current().nextInt(high-low) + low;
+        
+        if (result == 1){
+            System.out.println("I am sorry but there has been a cataclysmic event, rats were found in your wheat storage");
+            int wheat = cropData.getWheatInStore();
+            int destroy = ThreadLocalRandom.current().nextInt(wheat-0) + 0;
+            if (destroy > 0){
+                System.out.println("Rats destroyed " + String.valueOf(destroy) + " bushels of wheat");
+                cropData.setWheatInStore(wheat-destroy);
+                System.out.println("There are only " + String.valueOf(cropData.getWheatInStore())+ " bushels of wheat left");
+            }else{
+                System.out.println("You were lucky Rats did not destory any barrels of wheat");
+            }
+        }
     }
     
      public static void sellLandView()
@@ -148,8 +173,8 @@ public class CropView
         
         
         //Display the number of acres of wheat that have been planted and the amount of wheat left in storage.
-        System.out.format("You have set aside %d bushells of grain to feed people.", cropData.getWheatForFood());
-        System.out.format("\nYou now have %d bushels of grain left in storage", cropData.getWheatInStore());
+        System.out.format("You have set aside %d bushels of grain to feed people.", cropData.getWheatForFood());
+        System.out.format("\nYou now have %d bushels of grain left in storage\n", cropData.getWheatInStore());
     }
     
     public static void plantCropsView()
