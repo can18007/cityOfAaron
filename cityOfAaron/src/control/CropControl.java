@@ -13,7 +13,7 @@ package control;
 
 import java.util.Random;
 import model.CropData;
-import Exceptions.CropException;
+import exceptions.CropException;
 
 public class CropControl
 {
