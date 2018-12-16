@@ -31,5 +31,6 @@ public class Location implements Serializable {
     public void setSymbol(String _symbol){
         symbol = _symbol;
     }
+    
 }
 
